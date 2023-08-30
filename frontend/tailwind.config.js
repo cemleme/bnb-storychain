@@ -1,0 +1,86 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        color: "#01c5ba",
+        color1: "#000",
+        gray: {
+          100: "#101010",
+          200: "rgba(255, 255, 255, 0.55)",
+          300: "rgba(0, 0, 0, 0.7)",
+        },
+        "gray-00": "#fff",
+        dimgray: "#67654f",
+        silver: {
+          100: "#c1c1c1",
+          200: "#b4c5cb",
+          300: "#b5b5b5",
+        },
+        darkcyan: "rgba(0, 150, 136, 0.57)",
+        "primary-presed": "#39324d",
+        teal: "#0b6d65",
+        peachpuff: "rgba(255, 207, 192, 0.5)",
+        lightseagreen: "#0f9a8e",
+        color2: "#009688",
+        coral: "#ff8a65",
+        whitesmoke: "#f3f3f3",
+        pink: "rgba(255, 207, 207, 0.1)",
+        darkgray: "rgba(159, 159, 159, 0.1)",
+        disabled: "rgba(159, 159, 159, 0.1)",
+        darkslategray: "#393556",
+        gainsboro: "rgba(217, 217, 217, 0.7)",
+        "neutral-8o": "#f1f2f2",
+        "gray-shades-dark-shade": "#1f1f22",
+        "gray-shades-light-gray-2": "#efefef",
+        red: "#ff0f0f",
+        rosybrown: "#ca8787",
+        "neutral-9o": "#f7f7f7",
+      },
+      fontFamily: {
+        font: "Belanosima",
+        "playfair-display": "'Playfair Display'",
+        "crimson-text": "'Crimson Text'",
+        roboto: "Roboto",
+      },
+      borderRadius: {
+        "12xl": "31px",
+        xl: "20px",
+        "6xl": "25px",
+        "47xl": "66px",
+        "25xl": "44px",
+        "11xl": "30px",
+        "81xl": "100px",
+        "5xs-4": "7.4px",
+        "8xs": "5px",
+      },
+    },
+    fontSize: {
+      xl: "20px",
+      "3xs": "10px",
+      "11xl": "30px",
+      "5xl": "24px",
+      lg: "18px",
+      base: "16px",
+      "29xl": "48px",
+      "9xl": "28px",
+      "41xl": "60px",
+      xs: "12px",
+    },
+    screens: {
+      lg: {
+        max: "1200px",
+      },
+      md: {
+        max: "960px",
+      },
+      sm: {
+        max: "420px",
+      },
+    },
+  },
+  corePlugins: {
+    preflight: false,
+  },
+};

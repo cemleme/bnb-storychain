@@ -1,0 +1,197 @@
+
+.homeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.storiesWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.storiesHolder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.actionButton {
+  background-color: #04AA6D;
+  height: 100px;
+  width: 100px;
+  margin-left:30px;
+}
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+* {box-sizing: border-box}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.bookImage {
+  display: block;
+  height: 400px;
+  width: auto;
+}
+
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  height: 40%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.storyData {
+  color: #fff;
+  font-size: 12px;
+}
+
+.page {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.book:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  border-radius: 10px;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  position: relative;
+}
+.modal-content input {
+  width: 90%; 
+  height: 50px;
+}
+.modal-content button {
+  width: 90%; /* Could be more or less, depending on screen size */
+  background-color: #04AA6D;
+}
+
+/* The Close Button */
+.close {
+  color: red;
+  position:absolute;
+  top:-10px;
+  right:10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+label {
+  display: block;
+  color: #000;
+}
+
+.labelish {
+	color:#000;
+}
+
+.paymentOptions {
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	break-before: always;
+	margin: 0 0 0 0;
+}
+
+#purchaseOrder {
+	margin: 0 0 2em 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+.cost {
+  font-style: italic;
+  color: #0e0e0e;
+}
+
+.metadatalink {
+  z-index: 10;
+}
+
+.hideOnDesktop {
+  display:none;
+}
+
+/*** MEDIA QUERIES ***/
+@media ( max-width: 500px ) {
+  .sidebar {
+    display:none;
+  }
+
+  .hideOnDesktop {
+    display:flex;
+  }
+
+  .bodyContent {
+    top:70px;
+  }
+}
