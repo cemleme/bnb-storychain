@@ -14,11 +14,13 @@ So a story is created collaboratively by the users and each page belongs to one 
 
 Contracts:
 
+- Update .env to add 
+  privateKey=
 - To deploy: npx hardhat run scripts/deploy.js --network opbnb
 
 Backend:
 
-- Update contractAddress @ backend/run.js
+- Update contractAddress, greenfield bucket name and greenfield SP address @ backend/config.js
 - Update backend/.env to add keys
   openAiKey=
   privateKey=

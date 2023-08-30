@@ -92,6 +92,7 @@ const handleStory = async ({ nonce, author, prompt, page }) => {
     characterBackground,
     characterDescription,
     storyPage,
+    pageSummary,
     storyMessages,
   } = await generateStory({
     category,
@@ -135,12 +136,12 @@ const handleStory = async ({ nonce, author, prompt, page }) => {
     pages,
     characterDescription,
     characterBackground,
-    summary: story.summary,
     storyMessages,
     author,
     prompt,
     imagePrompt: story.imagePrompt,
     storyPage,
+    pageSummary,
     id,
   });
 

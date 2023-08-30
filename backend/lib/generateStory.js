@@ -12,10 +12,9 @@ const sleep = function (ms) {
 
 const generateStory = async ({ category, prompt, nonce, pages, llm }) => {
   const create = pages === 1;
-  //let combinedMessages;
+  let combinedMessages;
   let characterDescription;
   let characterBackground;
-  let summary = "";
   let storyMessages = [];
 
   if (pages > 1) {
@@ -25,12 +24,13 @@ const generateStory = async ({ category, prompt, nonce, pages, llm }) => {
     storyMessages = storyResponse.data.messages;
     characterDescription = storyResponse.data.characterDescription;
     characterBackground = storyResponse.data.characterBackground;
-    summary = storyResponse.data.summary || "";
 
-    // combinedMessages = "";
-    // storyMessages.map((m) => {
-    //   combinedMessages += m.page;
-    // });
+    combinedMessages = "";
+    storyMessages.map((m, i) => {
+      if (i == 0 || i == storyMessages.length - 1)
+        combinedMessages += m.page + " ";
+      else if (m.summary) combinedMessages += m.summary + " ";
+    });
   }
 
   const safetyPrompt = category == "0" ? "kids friendly" : "safe for working";
@@ -40,8 +40,7 @@ const generateStory = async ({ category, prompt, nonce, pages, llm }) => {
     : promptContinue({
         prompt,
         safetyPrompt,
-        previousStory: summary,
-        lastChapter: storyMessages[storyMessages.length - 1].page,
+        previousStory: combinedMessages,
         characterDescription,
       });
 
@@ -66,6 +65,16 @@ const generateStory = async ({ category, prompt, nonce, pages, llm }) => {
   const openAiResult = await openAIRequest.json();
   const newMessage = openAiResult.choices[0].message;
   console.log(newMessage);
+
+  if (newMessage.content[0] != "{") {
+    console.log("adding { to the newMessage start");
+    newMessage.content = "{" + newMessage.content;
+  }
+  if (newMessage.content[newMessage.content.length - 1] != "}") {
+    console.log("adding } to the newMessage ending");
+    newMessage.content = newMessage.content + "}";
+  }
+
   let story = JSON.parse(newMessage.content);
 
   characterBackground = story.characterBackground || characterBackground;
@@ -77,12 +86,14 @@ const generateStory = async ({ category, prompt, nonce, pages, llm }) => {
       "\n " +
       story.story
     : story.story;
+  const pageSummary = story.summary;
 
   return {
     story,
     characterBackground,
     characterDescription,
     storyPage,
+    pageSummary,
     storyMessages,
   };
 };

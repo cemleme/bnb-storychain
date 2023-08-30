@@ -11,11 +11,11 @@ const prepareStoryMetadata = async ({
   characterDescription,
   characterBackground,
   storyMessages,
-  summary,
   author,
   prompt,
   imagePrompt,
   storyPage,
+  pageSummary,
   id,
 }) => {
   const fileName = "story" + nonce + ".json";
@@ -32,6 +32,7 @@ const prepareStoryMetadata = async ({
     author,
     userPrompt: prompt,
     page: storyPage,
+    summary: pageSummary,
     imagePrompt,
     image: greenfieldSPAddress + bucketName + "/" + id + ".jpg",
     nftMetadata: greenfieldSPAddress + bucketName + "/" + id + ".json",
@@ -43,7 +44,6 @@ const prepareStoryMetadata = async ({
     characterDescription,
     characterBackground,
     messages: storyMessages,
-    summary,
     title,
     pages,
   };
