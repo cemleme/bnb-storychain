@@ -37,7 +37,6 @@ function Story() {
   }, [currentPage]);
 
   const loadStory = async () => {
-    console.log("loading story...");
     const s = await readContract({
       address: constants.contractAddress,
       abi: abi,
@@ -65,7 +64,6 @@ function Story() {
 
     setIsLandscape(modelToIsLandscape[data.imageAIid]);
     setUpdating(data.updating);
-    console.log("Story updating", data.updating);
 
     let lastPage = data.updating ? _numPages : _numPages - 1;
     if (goToLastPage) {

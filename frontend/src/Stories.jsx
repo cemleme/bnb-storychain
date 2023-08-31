@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
-import logo from "./assets/logo_storychain.png";
-import logoBox from "./assets/story_chain_logo_box.jpg";
-import logoAlt from "./assets/storychain_logo_alt.jpg";
 import { useAccount } from "wagmi";
 import { readContract, writeContract } from "@wagmi/core";
-import { InjectedConnector } from "wagmi/connectors/injected";
 import abi from "./abi.json";
 import constants from "./constants";
 import "./App.css";
-import axios from "axios";
 import { Outlet, Link } from "react-router-dom";
-import BigNumber from "bignumber.js";
 import BounceLoader from "react-spinners/ClipLoader";
 import StoryCard from "./components/story-card";
 
@@ -134,7 +128,6 @@ function Stories() {
     //     });
     // }
 
-    console.log(s);
     setStories(s);
     setIsLoading(false);
   };

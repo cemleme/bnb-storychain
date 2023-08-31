@@ -21,7 +21,6 @@ const Book = ({
   goToLastPage,
   goToFirstPage,
 }) => {
-  console.log("Book updating", updating);
   const { isConnected } = useAccount();
   const [isContinueStoryPopUpOpen, setContinueStoryPopUpOpen] = useState(false);
 
