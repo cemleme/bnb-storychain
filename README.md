@@ -10,11 +10,18 @@ Once a user creates a story, they define the category (such as if it is a childr
 
 So a story is created collaboratively by the users and each page belongs to one user with unique story and art. More if it, this page itself is minted as an **NFT** for the user; which can be visited on opBNB Explorer and NFT Marketplaces.
 
+## Pre-requisites
+
+Project requires openAI API key, leonardo API key, opBNB wallet private key, BNB Greenfield SP Address, BNB Greenfield bucketname, BNB Greenfield account.
+
+BNB Greenfield commands require https://github.com/bnb-chain/greenfield-cmd
+Please follow instructions there to setup gnfd-cmd build and put it inside ./backend/lib/greenfield/ folder.
+
 ## Instructions
 
 Contracts:
 
-- Update .env to add 
+- Update .env to add
   privateKey=
 - To deploy: npx hardhat run scripts/deploy.js --network opbnb
 
