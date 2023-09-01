@@ -7,7 +7,7 @@ const upload = async ({ type = "image/jpeg", filePath, fileName }) => {
   const command = `./lib/greenfield/gnfd-cmd -p ./lib/greenfield/password.txt object put --contentType ${type} --visibility public-read ${filePath} gnfd://${bucketName}/${fileName}`;
 
   const result = await exec(command);
-  if (result.stdout.includes(`put object ${fileName} successfully`)) {
+  if (result.stdout.includes(`object ${fileName} created on chain`)) {
     console.log(`${fileName} successfully uploaded`);
     return true;
   } else {

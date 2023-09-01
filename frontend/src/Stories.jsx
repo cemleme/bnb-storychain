@@ -26,7 +26,7 @@ function Stories() {
     setIsLoading(true);
     const calls = [];
 
-    for (let i = 1; i < 15; i++) {
+    for (let i = 0; i < 15; i++) {
       calls.push(
         readContract({
           address: constants.contractAddress,
@@ -154,7 +154,7 @@ function Stories() {
               )}
               {stories &&
                 stories.map((s) => (
-                  <div key={s.nonce}>
+                  <div key={s.image}>
                     <Link
                       to={s.image ? "/stories/" + s.nonce : "#"}
                       className="no-underline"

@@ -1,7 +1,7 @@
 export default {
-  contractAddress: "0x5789F563cF0cC65cCc1EbC09C6083e6b2402CF85",
+  contractAddress: "0xD5bEBD38B4F79139f3DE81C20041e8957C6c68Fd",
   bucketName: "storychain",
-  greenfieldSPAddress: "https://gnfd-testnet-sp3.bnbchain.org/view/",
+  greenfieldSPAddress: "https://gnfd-testnet-sp1.bnbchain.org/view/",
   styles: [
     "regular",
     "colored sketch",
